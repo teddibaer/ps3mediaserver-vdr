@@ -1,0 +1,21 @@
+A primitive VDR plugin for the PMS
+
+What it does:
+It queries the VDR via Streamdev Plugin for its channels and adds the TV channels as direct TS links to PMS 
+(= streaming is done directly from the VDR to the renderer), so that PMS is not bothered with re-encoding 
+or even buffering. 
+The Radio channels are added as normal web audio links to the ES streams of the VDR/Streamdev (because
+they need to be re-encoded for the PS3).
+It also is able to list recordings - unfortunately streamdev does not support streaming of recordings directly yet. However - it might be possible to use the externalremux mechanism to let streamdev think it streams a tv program, but really stream a file from disk. I have done some tests in that direction but could not fully get it to work (the recorded movie started playing ok but froze after some seconds).
+
+Requires:
+- a working VDR with Streamdev Plugin (http://projects.vdr-developer.org/projects/show/plg-streamdev)
+
+Install
+- copy the plugin into the PMS plugins folder
+- start up PMS
+- configure the plugin with the host/port of the VDR
+
+TODO
+- channel icons
+
